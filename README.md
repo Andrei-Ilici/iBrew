@@ -1,3 +1,4 @@
 # Andrei
 Andrei's repo
-This file has been written on the Github webpage and not submitted throught Gitbash, like the rest of the program.
+This repo hosts my program written in Python and developed while studying Data Engineering at Generation.
+The program is updated reguralry with new functionalities.
