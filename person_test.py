@@ -2,7 +2,6 @@ import unittest
 from funct_person import Person
 
 class PersonTest(unittest.TestCase):
-
     def test_person(self):
         test_person = Person("Andrei",21,1.72,"Pepsi")
         expected_person_name = "Andrei"
