@@ -18,10 +18,9 @@ first_name = input("The first name is: ")
 surname = input("The surname is: ")
 age = int(input("The age is: "))
 
-sql_person = "INSERT INTO person (first_name, surname, age) VALUES (%s, %s, %s)"
+sql_person_command = "INSERT INTO person (first_name, surname, age) VALUES (%s, %s, %s)"
 val_person = (first_name, surname, age)
-
-cursor.execute(sql_person, val_person)
+cursor.execute(sql_person_command, val_person)
 connection.commit()
 
 cursor.close()
