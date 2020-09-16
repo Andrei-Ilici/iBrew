@@ -1,16 +1,19 @@
 from database import connect
+from funct_drink import Drinks
 
 def read_drinksdb():
     connect()
     from database import connection
+    global drinks
+    drinks=[]
 
     cursor_drinks = connection.cursor()
     cursor_drinks.execute("SELECT name, container, volume FROM drink")
-    rows = cursor_drinks.fetchall()
-    print (rows)
+    rowsd = cursor_drinks.fetchall()
 
-    for row in rows:
-        print(str(row[0]) + "comes in a " + row[1] + ' bottle of ' + str(row[2])+' liters.')
+    for row in rowsd:
+        drink = Drinks(row[0],row[1],row[2])
+        drinks.append(drink)
     
     cursor_drinks.close()
     connection.close()

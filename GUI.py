@@ -1,9 +1,9 @@
 from tkinter import *
 from funct_favourite import Favourite
-from read_csv import read
 from new_people import NewWindow_Addpeople
 from new_drinks import NewWindow_Adddrinks
 from read_people import read_peopledb
+from read_drinks import read_drinksdb
 
 root = Tk()
 root.title("iBrew app")
@@ -18,8 +18,8 @@ def readpeop():
         T.insert(END, '\n')
 
 def readdrk():
-    read("program_drinks.csv")
-    from read_csv import drinks
+    read_drinksdb()
+    from read_drinks import drinks
     T.delete(1.0, END)
     for beverage in drinks:
         T.insert(END, beverage)
@@ -46,16 +46,8 @@ def linkpeop():
 
 #Define interface
 hellomenu = """
-Please select an option by entering a number:
-
-    [1] Display all people
-    [2] Display all drinks
-    [3] Add people
-    [4] Add drinks
-    [5] Order menu
-    [6] Link people with drinks
-    [7] Exit
-    """
+Please select one of the following options: 
+"""
 myLabel = Label(root, text=hellomenu)
 myLabel.grid(row=1, column=1)
 
