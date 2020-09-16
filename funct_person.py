@@ -11,5 +11,8 @@ class Person:
     
     def write(self):
         with open(self,"a") as write_elem:
-            new_line = input("Please write the Name, Age, Height and Favourite drink separated by a comma: ")
-            write_elem.write('\n' + new_line)
+            new_name = input("Please write the person name: ") 
+            new_age = input("Please write their age: ")
+            new_height = input("Please write their height: ")
+            new_fav_drink = input("Please write their favourite drink: ")
+            write_elem.write('\n' + new_name+ ","+ new_age+ ","+ new_height+ ","+new_fav_drink)

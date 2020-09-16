@@ -11,5 +11,7 @@ class Drinks:
     
     def write(self):
         with open(self,"a") as write_elem:
-            new_line = input("Please write the Drink name, its type plus the container and volume it's sold in separated by a comma: ")
-            write_elem.write('\n' + new_line)
+            new_drink = input("Please write the drink name: ")
+            new_container = input("Please write the container type: ")
+            new_volume = input("Please write the volume of the container in liters: ")
+            write_elem.write('\n' + new_drink + "," + new_container + "," + new_volume)

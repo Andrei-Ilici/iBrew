@@ -4,23 +4,23 @@ connection = pymysql.connect(
     host =	"localhost",
     port = 3306,
     user = "root",
-    password = "ttii2.jI",
-    db = "people",
+    password = "root_password",
+    db = "brew",
 )
 cursor = connection.cursor()
-cursor.execute("SELECT person_id, first_name, surname, age FROM person")
+cursor.execute("SELECT first_name, age FROM person")
 rows = cursor.fetchall()
 print (rows)
 for row in rows:
-    print("ID - " + str(row[0]) + ", Name - " + row[1] + ' '+ row[2]+ ' is '+ str(row[3]) + ' old.')
+    print("Name - " + row[0] + ' is '+' old.')
 
-first_name = input("The first name is: ")
-surname = input("The surname is: ")
-age = int(input("The age is: "))
+# first_name = input("The first name is: ")
+# surname = input("The surname is: ")
+# age = int(input("The age is: "))
 
-sql_person_command = "INSERT INTO person (first_name, surname, age) VALUES (%s, %s, %s)"
-val_person = (first_name, surname, age)
-cursor.execute(sql_person_command, val_person)
+# sql_person_command = "INSERT INTO person (first_name, surname, age) VALUES (%s, %s, %s)"
+# val_person = (first_name, surname, age)
+# cursor.execute(sql_person_command, val_person)
 connection.commit()
 
 cursor.close()

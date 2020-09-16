@@ -12,14 +12,19 @@ people = [2]
 def readpeop():
     read("program_people.csv")
     from read_csv import people
+    T.delete(1.0, END)
     for individual in people:
-        print(individual)
+        T.insert(END, individual)
+        T.insert(END, '\n')
+    NewWindow_Addpeople()
 
 def readdrk():
     read("program_drinks.csv")
     from read_csv import drinks
+    T.delete(1.0, END)
     for beverage in drinks:
-        print(beverage)
+        T.insert(END, beverage)
+        T.insert(END, '\n')
 
 def addpeop():
     from funct_person import Person
@@ -37,6 +42,45 @@ def ordermenu():
 def linkpeop():
     from funct_link import link
     link()
+
+def NewWindow_Addpeople():
+    new = Toplevel(root)
+    new.title("Add people")
+    mylabel = Label(new, text="Works")
+    mylabel.grid(row=2, column =2)
+    new_name = Entry(new, width=27)
+    new_age = Entry(new, width=27)
+    new_height = Entry(new, width=27)
+    new_fav = Entry(new, width=27)
+    
+    new_name.grid(row=1,column=2)
+    new_age.grid(row=2, column=2)
+    new_height.grid(row=3, column=2)
+    new_fav.grid(row=4, column=2)
+    
+    new_pers_enter = Button(new, text= "Enter", command=lambda: enterval())
+    new_pers_enter.grid(row=5, column=2)
+    
+    new_pers_exit = Button(new, text="Exit", command=new.destroy)
+    new_pers_exit.grid(row=6, column=2)
+    
+    name_label = Label(new, text= "Insert name here: ")
+    age_label = Label(new, text= "Insert age here: ")
+    height_label = Label(new, text= "Insert height here: ")
+    fav_label = Label(new, text= "   Insert favourite drink here:   ")
+
+    name_label.grid(row=1, column=1)
+    age_label.grid(row=2, column=1)
+    height_label.grid(row=3, column=1)
+    fav_label.grid(row=4, column=1)
+    
+    def enterval():
+        value_name = new_name.get()
+        value_age = new_age.get()
+        value_height = new_height.get()
+        value_fav = new_fav.get()
+        print(value_name + value_age + value_height + value_fav)    
+    
 
 #Define interface
 hellomenu = """
@@ -61,14 +105,16 @@ button_add_drinks = Button(root, text="Add drinks", padx=120, pady=20, command=a
 button_order_menu = Button(root, text="Order menu", padx=120, pady=20, command=ordermenu)
 button_link_people = Button(root, text="Link people", padx=120, pady=20, command=linkpeop)
 button_exit = Button(root, text="Exit", padx=135, pady=20, command=root.quit)
+T= Text(root, height=7, width=69)
 
 #Arrange buttonsfrom program import read
-button_read_people.grid(row=2, column=1)
-button_read_drinks.grid(row=3, column=1)
-button_add_people.grid(row=4, column=1)
-button_add_drinks.grid(row=5, column=1)
-button_order_menu.grid(row=6, column=1)
-button_link_people.grid(row=7, column=1)
-button_exit.grid(row=8, column=1)
+T.grid(row=2, column=1)
+button_read_people.grid(row=3, column=1)
+button_read_drinks.grid(row=4, column=1)
+button_add_people.grid(row=5, column=1)
+button_add_drinks.grid(row=6, column=1)
+button_order_menu.grid(row=7, column=1)
+button_link_people.grid(row=8, column=1)
+button_exit.grid(row=9, column=1)
 
 root.mainloop()
