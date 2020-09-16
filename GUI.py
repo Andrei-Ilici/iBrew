@@ -1,22 +1,21 @@
 from tkinter import *
 from funct_favourite import Favourite
 from read_csv import read
+from new_people import NewWindow_Addpeople
+from new_drinks import NewWindow_Adddrinks
+from read_people import read_peopledb
 
 root = Tk()
 root.title("iBrew app")
-people = [2]
-# e = Entry(root, width=32)
-# e.grid(row=0, column=0, columnspan=1, padx=10, pady=10)
 
 #Define button actions
 def readpeop():
-    read("program_people.csv")
-    from read_csv import people
+    read_peopledb()
+    from read_people import people
     T.delete(1.0, END)
-    for individual in people:
-        T.insert(END, individual)
+    for person in people:
+        T.insert(END, person)
         T.insert(END, '\n')
-    NewWindow_Addpeople()
 
 def readdrk():
     read("program_drinks.csv")
@@ -27,12 +26,14 @@ def readdrk():
         T.insert(END, '\n')
 
 def addpeop():
-    from funct_person import Person
-    Person.write("program_people.csv")
+    NewWindow_Addpeople()
+    # from funct_person import Person
+    # Person.write("program_people.csv")
 
 def adddrk():
-    from funct_drink import Drinks
-    Drinks.write("program_drinks.csv") 
+    NewWindow_Adddrinks()
+    # from funct_drink import Drinks
+    # Drinks.write("program_drinks.csv") 
 
 def ordermenu():
     from funct_menu import bar_menu
@@ -42,45 +43,6 @@ def ordermenu():
 def linkpeop():
     from funct_link import link
     link()
-
-def NewWindow_Addpeople():
-    new = Toplevel(root)
-    new.title("Add people")
-    mylabel = Label(new, text="Works")
-    mylabel.grid(row=2, column =2)
-    new_name = Entry(new, width=27)
-    new_age = Entry(new, width=27)
-    new_height = Entry(new, width=27)
-    new_fav = Entry(new, width=27)
-    
-    new_name.grid(row=1,column=2)
-    new_age.grid(row=2, column=2)
-    new_height.grid(row=3, column=2)
-    new_fav.grid(row=4, column=2)
-    
-    new_pers_enter = Button(new, text= "Enter", command=lambda: enterval())
-    new_pers_enter.grid(row=5, column=2)
-    
-    new_pers_exit = Button(new, text="Exit", command=new.destroy)
-    new_pers_exit.grid(row=6, column=2)
-    
-    name_label = Label(new, text= "Insert name here: ")
-    age_label = Label(new, text= "Insert age here: ")
-    height_label = Label(new, text= "Insert height here: ")
-    fav_label = Label(new, text= "   Insert favourite drink here:   ")
-
-    name_label.grid(row=1, column=1)
-    age_label.grid(row=2, column=1)
-    height_label.grid(row=3, column=1)
-    fav_label.grid(row=4, column=1)
-    
-    def enterval():
-        value_name = new_name.get()
-        value_age = new_age.get()
-        value_height = new_height.get()
-        value_fav = new_fav.get()
-        print(value_name + value_age + value_height + value_fav)    
-    
 
 #Define interface
 hellomenu = """
@@ -107,7 +69,7 @@ button_link_people = Button(root, text="Link people", padx=120, pady=20, command
 button_exit = Button(root, text="Exit", padx=135, pady=20, command=root.quit)
 T= Text(root, height=7, width=69)
 
-#Arrange buttonsfrom program import read
+#Arrange buttons
 T.grid(row=2, column=1)
 button_read_people.grid(row=3, column=1)
 button_read_drinks.grid(row=4, column=1)

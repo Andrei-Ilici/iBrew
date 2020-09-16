@@ -1,18 +1,16 @@
 
 class Person:
-    def __init__(self,name,age,height,favourite_drink):
-        self.name = name
+    def __init__(self,first_name,surname,age):
+        self.first_name = first_name
+        self.surname = surname
         self.age = age
-        self.height = height
-        self.favourite_drink = favourite_drink
     
     def __repr__(self):
-        return f"{self.name} is {self.age} old, {self.height} meters tall and loves drinking {self.favourite_drink}."
+        return f"{self.first_name} {self.surname} is {self.age} old."
     
     def write(self):
         with open(self,"a") as write_elem:
-            new_name = input("Please write the person name: ") 
+            new_first_name = input("Please write the person first name: ") 
+            new_surname = input("Please write their surname: ")
             new_age = input("Please write their age: ")
-            new_height = input("Please write their height: ")
-            new_fav_drink = input("Please write their favourite drink: ")
-            write_elem.write('\n' + new_name+ ","+ new_age+ ","+ new_height+ ","+new_fav_drink)
+            write_elem.write('\n' + new_first_name+ ","+ new_surname+ ","+ new_age)

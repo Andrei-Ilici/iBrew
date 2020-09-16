@@ -8,9 +8,6 @@ from funct_order import Order
 from funct_favourite import Favourite
 
 
-
-
-
 # def menu():
 #     os.system("clear")
 #     menu_text ="""

@@ -15,8 +15,8 @@ def read(file_name):
         csv_reader = csv.reader(csv_file, delimiter=',')
         for row in csv_reader:
             if file_name == "program_people.csv":
-                person = Person(row[0],row[1],row[2],row[3])
+                person = Person(row[0],row[1],row[2])
                 people.append(person)
             elif file_name == "program_drinks.csv":
-                drink = Drinks(row[0],row[1],row[2],row[3])
+                drink = Drinks(row[0],row[1],row[2])
                 drinks.append(drink)
