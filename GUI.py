@@ -27,17 +27,13 @@ def readdrk():
 
 def addpeop():
     NewWindow_Addpeople()
-    # from funct_person import Person
-    # Person.write("program_people.csv")
 
 def adddrk():
     NewWindow_Adddrinks()
-    # from funct_drink import Drinks
-    # Drinks.write("program_drinks.csv") 
 
 def ordermenu():
     from funct_menu import bar_menu
-    from funct_order import Order
+    from class_order import Order
     bar_menu()
 
 def linkpeop():

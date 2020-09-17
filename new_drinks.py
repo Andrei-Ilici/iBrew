@@ -42,4 +42,4 @@ def NewWindow_Adddrinks():
         connection.commit()
         cursor_drinks.close()
         connection.close()
-        print( value_drink + ' '+ value_container + ' ' + value_volume)    
+        new.destroy()

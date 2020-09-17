@@ -1,5 +1,5 @@
 from database import connect
-from read_people import Person
+from class_person import Person
 
 def read_peopledb():
     connect()

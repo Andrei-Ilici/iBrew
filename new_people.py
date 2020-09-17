@@ -43,3 +43,4 @@ def NewWindow_Addpeople():
         
         cursor_people.close()
         connection.close()
+        new.destroy()
