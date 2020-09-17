@@ -1,5 +1,5 @@
 from read_csv import read
-from funct_order import Order
+from class_order import Order
 
 def bar_menu():
     orders = []

@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Entry, Tk, Button, Label
 from database import connect
 
 def NewWindow_Addpeople():
@@ -33,8 +33,6 @@ def NewWindow_Addpeople():
         value_first_name = new_first_name.get()
         value_surname = new_surname.get()
         value_age = new_age.get()
-        int_age = int(value_age)
-        print(value_first_name + value_surname + str(int_age))
         
         cursor_people = connection.cursor()
 

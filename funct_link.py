@@ -1,9 +1,9 @@
 from read_csv import read
 
 def link():
-    from funct_person import Person
-    from funct_drink import Drinks
-    from funct_favourite import Favourite
+    from class_person import Person
+    from class_drink import Drinks
+    from class_favourite import Favourite
 
     preference = []
     drink_list=[]

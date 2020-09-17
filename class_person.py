@@ -6,7 +6,7 @@ class Person:
         self.age = age
     
     def __repr__(self):
-        return f"{self.first_name} {self.surname} is {self.age} old."
+        return f"{self.first_name} {self.surname} is {self.age} years old."
     
     def write(self):
         with open(self,"a") as write_elem:

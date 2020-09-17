@@ -1,5 +1,5 @@
 import pymysql
-from funct_person import Person
+from class_person import Person
 
 #Connecting to main database to obtain both tables
 def connect():

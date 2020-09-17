@@ -1,5 +1,5 @@
-from tkinter import *
-from funct_favourite import Favourite
+from tkinter import Entry, Tk, Button, Label, END, Text
+from class_favourite import Favourite
 from new_people import NewWindow_Addpeople
 from new_drinks import NewWindow_Adddrinks
 from read_people import read_peopledb
@@ -44,7 +44,7 @@ def linkpeop():
     from funct_link import link
     link()
 
-#Define interface
+### Define interface
 hellomenu = """
 Please select one of the following options: 
 """
@@ -59,7 +59,7 @@ button_add_drinks = Button(root, text="Add drinks", padx=120, pady=20, command=a
 button_order_menu = Button(root, text="Order menu", padx=120, pady=20, command=ordermenu)
 button_link_people = Button(root, text="Link people", padx=120, pady=20, command=linkpeop)
 button_exit = Button(root, text="Exit", padx=135, pady=20, command=root.quit)
-T= Text(root, height=7, width=69)
+T= Text(root, height=15, width=69)
 
 #Arrange buttons
 T.grid(row=2, column=1)

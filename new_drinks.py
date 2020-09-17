@@ -1,4 +1,5 @@
-from tkinter import *
+from tkinter import Entry, Tk, Button, Label
+from database import connect
 
 def NewWindow_Adddrinks():
     new = Tk()
@@ -26,7 +27,19 @@ def NewWindow_Adddrinks():
     volume_label.grid(row=3, column=1)
     
     def enterval():
+        connect()
+        from database import connection
+        
         value_drink = new_drink.get()
         value_container = new_container.get()
         value_volume = new_volume.get()
+        
+        cursor_drinks = connection.cursor()
+
+        sql_drink = "INSERT INTO drink (name, container, volume) VALUES (%s, %s, %s)"
+        val_drink = (value_drink, value_container, value_volume)
+        cursor_drinks.execute(sql_drink, val_drink)
+        connection.commit()
+        cursor_drinks.close()
+        connection.close()
         print( value_drink + ' '+ value_container + ' ' + value_volume)    
