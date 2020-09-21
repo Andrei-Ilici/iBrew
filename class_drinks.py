@@ -1,12 +1,13 @@
 
 class Drinks:
-    def __init__(self,name,container,volume):
+    def __init__(self,name,category,volume,price):
         self.name = name
-        self.container = container
+        self.category = category
         self.volume = volume
+        self.price = price
         
     def __repr__(self):
-        return f"{self.name} comes in a {self.container} bottle of {self.volume} liters."
+        return f"{self.name} is a {self.category} drink sold in a bottle of {self.volume} liters for £{self.price}."
     
     # def write(self):
     #     with open(self,"a") as write_elem:

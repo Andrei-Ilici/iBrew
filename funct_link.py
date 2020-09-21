@@ -2,7 +2,7 @@ from read_csv import read
 
 def link():
     from class_person import Person
-    from class_drink import Drinks
+    from class_drinks import Drinks
     from class_favourite import Favourite
 
     preference = []

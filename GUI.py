@@ -48,13 +48,13 @@ myLabel = Label(root, text=hellomenu)
 myLabel.grid(row=1, column=1)
 
 #Define button
-button_read_people = Button(root, text="Read people", padx=120, pady=20, command=readpeop)
-button_read_drinks = Button(root, text="Read drinks", padx=120, pady=20, command=readdrk)
-button_add_people = Button(root, text="Add people", padx=120, pady=20, command=addpeop)
-button_add_drinks = Button(root, text="Add drinks", padx=120, pady=20, command=adddrk)
-button_order_menu = Button(root, text="Order menu", padx=120, pady=20, command=ordermenu)
-button_link_people = Button(root, text="Link people", padx=120, pady=20, command=linkpeop)
-button_exit = Button(root, text="Exit", padx=135, pady=20, command=root.quit)
+button_read_people = Button(root, text="Read people", padx=119, pady=20, command=readpeop)
+button_read_drinks = Button(root, text="Read drinks", padx=121, pady=20, command=readdrk)
+button_add_people = Button(root, text="Add people", padx=123, pady=20, command=addpeop)
+button_add_drinks = Button(root, text="Add drinks", padx=125, pady=20, command=adddrk)
+button_order_menu = Button(root, text="Order menu", padx=121, pady=20, command=ordermenu)
+button_link_people = Button(root, text="Link people", padx=122, pady=20, command=linkpeop)
+button_exit = Button(root, text="Exit", padx=147, pady=20, command=root.quit)
 T= Text(root, height=15, width=69)
 
 #Arrange buttons

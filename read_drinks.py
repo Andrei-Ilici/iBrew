@@ -8,11 +8,11 @@ def read_drinksdb():
     drinks=[]
 
     cursor_drinks = connection.cursor()
-    cursor_drinks.execute("SELECT name, container, volume FROM drink")
+    cursor_drinks.execute("SELECT name, category, volume, price FROM drink")
     rowsd = cursor_drinks.fetchall()
 
     for row in rowsd:
-        drink = Drinks(row[0],row[1],row[2])
+        drink = Drinks(row[0],row[1],row[2], row[3])
         drinks.append(drink)
     
     cursor_drinks.close()
