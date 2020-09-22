@@ -1,6 +1,4 @@
 from tkinter import Entry, Tk, Button, Label, END, Text
-from class_favourite import Favourite
-from class_order import total_orders
 from new_people import NewWindow_Addpeople
 from new_drinks import NewWindow_Adddrinks
 from new_round import NewWindow_addround
@@ -39,7 +37,6 @@ def addround():
 
 def getcheck():
     check()
-    #print(total_orders)
 
 ### Define interface
 hellomenu = """
