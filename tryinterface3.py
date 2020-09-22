@@ -1,6 +1,7 @@
 from tkinter import Button, END, Entry, Label, Text, Tk
 
 drinks = ['Fanta','Schweppes','Tuborg','Pepsi']
+values=[]
 
 root = Tk()
 root.title("Maybe it works")
@@ -13,12 +14,15 @@ for drink in drinks:
     
     number_box = Entry(root, width=27)
     number_box.grid(row = i, column =2)
-    number_value = number_box.get()
-    
+    values.append(number_box)
     i+=1
-    
+
 def enterval():
-    print(number_value)
+    list2=[]
+    for entry in values:
+        list2.append(int(entry.get()))
+        #print (entry.get())
+    print(list2)
 
 afisare = Button (root, text = "save", command = lambda: enterval())
 afisare.grid()

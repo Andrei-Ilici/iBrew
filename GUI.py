@@ -1,7 +1,9 @@
 from tkinter import Entry, Tk, Button, Label, END, Text
 from class_favourite import Favourite
+from class_order import total_orders
 from new_people import NewWindow_Addpeople
 from new_drinks import NewWindow_Adddrinks
+from new_round import NewWindow_addround
 from read_people import read_peopledb
 from read_drinks import read_drinksdb
 
@@ -31,14 +33,13 @@ def addpeop():
 def adddrk():
     NewWindow_Adddrinks()
 
-def ordermenu():
-    from funct_menu import bar_menu
-    from class_order import Order
-    bar_menu()
+def addround():
+    NewWindow_addround()
 
 def linkpeop():
-    from funct_link import link
-    link()
+    # from funct_link import link
+    # link()
+    print(total_orders)
 
 ### Define interface
 hellomenu = """
@@ -52,9 +53,9 @@ button_read_people = Button(root, text="Read people", padx=119, pady=20, command
 button_read_drinks = Button(root, text="Read drinks", padx=121, pady=20, command=readdrk)
 button_add_people = Button(root, text="Add people", padx=123, pady=20, command=addpeop)
 button_add_drinks = Button(root, text="Add drinks", padx=125, pady=20, command=adddrk)
-button_order_menu = Button(root, text="Order menu", padx=121, pady=20, command=ordermenu)
-button_link_people = Button(root, text="Link people", padx=122, pady=20, command=linkpeop)
-button_exit = Button(root, text="Exit", padx=147, pady=20, command=root.quit)
+button_order_menu = Button(root, text="Order round", padx=121, pady=20, command=addround)
+button_link_people = Button(root, text="Get the check", padx=115, pady=20, command=linkpeop)
+button_exit = Button(root, text="Exit", padx=147, pady=20, command=root.destroy)
 T= Text(root, height=15, width=69)
 
 #Arrange buttons

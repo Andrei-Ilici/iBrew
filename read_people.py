@@ -10,6 +10,7 @@ def read_peopledb():
     
     cursor_people.execute("SELECT first_name, last_name, age FROM person")
     rowsp = cursor_people.fetchall()
+    
     for row in rowsp:
         person = Person(row[0],row[1],row[2])
         people.append(person)
