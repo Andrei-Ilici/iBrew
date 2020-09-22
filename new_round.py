@@ -44,7 +44,6 @@ def ordername(name, person_age):
         else:
             drinkLabel = Label(newest, text = drink.name)
             drinkLabel.grid(row=i, column=0)
-    
             drink_name.append(drink.name)
             drink_price.append(drink.price)
             number_box = Entry(newest, width=27)
@@ -59,16 +58,16 @@ def ordername(name, person_age):
         for value in values:
             
             if drink_name[i] in total_orders.keys():
-                total_orders[drink_name[i]] += int(value.get())
+                total_orders[drink_name[i]] += round( float(value.get())*drink_price[i],2)
             else:
-                total_orders[drink_name[i]] = int(value.get())
+                total_orders[drink_name[i]] = round( float(value.get())*drink_price[i],2)
             
-            order_value += round( int(value.get())*drink_price[i], 2)
+            order_value += round( float(value.get())*drink_price[i],2)
             i+=1       
         if name in individual_spending:
-            individual_spending[name] += round( order_value,2)
+            individual_spending[name] += round ( float(order_value), 2)
         else:
-            individual_spending[name] = round( order_value,2)
+            individual_spending[name] = round ( float(order_value), 2)
         
     
     afisare = Button (newest, text = "Save", command = lambda: enterval(name))
