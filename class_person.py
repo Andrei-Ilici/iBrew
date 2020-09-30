@@ -10,9 +10,3 @@ class Person:
     
     def __getitem__(self,first_name):
         return self.first_name[first_name]
-    # def write(self):
-    #     with open(self,"a") as write_elem:
-    #         new_first_name = input("Please write the person first name: ") 
-    #         new_surname = input("Please write their surname: ")
-    #         new_age = input("Please write their age: ")
-    #         write_elem.write('\n' + new_first_name+ ","+ new_surname+ ","+ new_age)

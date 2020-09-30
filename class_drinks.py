@@ -11,9 +11,3 @@ class Drinks:
     
     def __getitem__(self,name):
         return self.name[name]
-    # def write(self):
-    #     with open(self,"a") as write_elem:
-    #         new_drink = input("Please write the drink name: ")
-    #         new_container = input("Please write the container type: ")
-    #         new_volume = input("Please write the volume of the container in liters: ")
-    #         write_elem.write('\n' + new_drink + "," + new_container + "," + new_volume)
