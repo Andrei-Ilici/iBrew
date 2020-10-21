@@ -1,7 +1,7 @@
 import pymysql
 from class_person import Person
 
-#Connecting to main database to obtain both tables
+#Connects to main database to obtain people and drinks tables
 def connect():
     global connection
     connection = pymysql.connect(
