@@ -8,6 +8,6 @@ def connect():
         host =	"localhost",
         port = 3306,
         user = "root",
-        password = "ttii2.jI",
+        password = "strong_passwd",
         db = "brew",
     )
